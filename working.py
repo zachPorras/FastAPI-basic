@@ -41,7 +41,6 @@ def get_item(name: Optional[str] = None):
 def create_item(item_id: int, item: Item):
     if item_id in inventory:
         raise HTTPException(status_code=400, detail="Item ID already exists")
-    
     inventory[item_id] = item
     return inventory[item_id]
 
